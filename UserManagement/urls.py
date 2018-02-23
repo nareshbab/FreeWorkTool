@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^login$', authentication_views.Login.as_view()),
     url(r'^logout$', authentication_views.Logout.as_view()),
     url(r'^register$', authentication_views.Register.as_view()),
+    url(r'^name$', authentication_views.Name.as_view()),
 
 ]

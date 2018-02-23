@@ -10,6 +10,7 @@ class User(MongoModel):
     last_name = fields.CharField(required=True)
     password = fields.CharField(required=True)
     email = fields.CharField(required=True)
+    user_id = fields.CharField(required=True)
     phone = fields.FloatField(required=False, default=1)
 
     def __str__(self):
