@@ -19,4 +19,7 @@ if __name__ == "__main__":
                 "forget to activate a virtual environment?"
             )
         raise
+    if 'local' in sys.argv:
+        os.environ['local'] = '1'
+        sys.argv.remove('local')
     execute_from_command_line(sys.argv)

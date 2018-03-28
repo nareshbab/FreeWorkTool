@@ -1,4 +1,4 @@
-"""FreeWorkTool URL Configuration
+"""UserManagement URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from . import authentication_views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^', include('UserManagement.urls')),
-    # url(r'^accounts/', include('django.contrib.auth.urls')),
+    url(r'^login$', authentication_views.Login.as_view()),
+    url(r'^logout$', authentication_views.Logout.as_view()),
+    url(r'^register$', authentication_views.Register.as_view()),
+    url(r'^name$', authentication_views.Name.as_view()),
 
 ]
